@@ -12,3 +12,4 @@ logs/
 firmware/
 !logs/.gitkeep
 !firmware/.gitkeep
+venv
