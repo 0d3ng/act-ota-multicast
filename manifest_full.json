@@ -1,0 +1,10 @@
+{
+  "manifest_version": "2.0",
+  "type": "full",
+  "base_version": null,
+  "target_version": "test-v1",
+  "target_hash": "24dfe16adefae495a82e8f5d7e8dbe1549263c0fd7d8cbe171b48fe364c9378a",
+  "target_size": 1024,
+  "key_generation": 0,
+  "signature": "c4c2660ad24333698361d9db47bfc5acb18eaa244b6c7ee3d7824a8cbb9e1461947637c263549eda0a3754f1295f3b0426fa5ebcaaba63b8c27714197a682300"
+}
