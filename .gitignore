@@ -13,3 +13,4 @@ firmware/
 !logs/.gitkeep
 !firmware/.gitkeep
 venv
+build

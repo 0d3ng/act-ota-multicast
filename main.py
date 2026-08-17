@@ -43,7 +43,7 @@ try:
         print(f"Latest full release response: {data}")
         if isinstance(data, dict):
             base_version = data.get("target_version") or data.get("version") or data.get("base_version")
-            base_fw_url = data.get("file_path")
+            base_fw_url = f'{api_url}/firmware-releases/download/'+data.get("download_url")
     else:
         print(f"⚠️ Notice: No previous full release found or endpoint returned HTTP {resp.status_code}")
 except Exception as e:

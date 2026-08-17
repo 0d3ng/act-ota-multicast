@@ -2,9 +2,9 @@
   "manifest_version": "2.0",
   "type": "full",
   "base_version": null,
-  "target_version": "test-v1",
-  "target_hash": "668b47b376ba742c0916aa15dfa8916d87e26e9464ab8b005d627161052a9dd1",
+  "target_version": "test-8564da2-1786933237",
+  "target_hash": "f8912eacd0c7f2fd948b4ae1edeacbb968e76c30a161782c0f1c97e7525f9431",
   "target_size": 860144,
   "key_generation": 0,
-  "signature": "53e3ed2c3f55a4f805e9503be8f83850ba1e16717af85a24bb129ddf29e264d943b12c6affcc1bf9933bca071ec0991b06538c747addc4099c4d23806468a202"
+  "signature": "7b10963c7eb28f31bb08f11263aecb9bf347bdae524a0202e646b73fb4436f1803a4b5475a9e841a9a5917ac147b0a366a00071549dcd84d983f7cfb2bffbd0f"
 }

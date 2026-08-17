@@ -1,0 +1,13 @@
+{
+  "manifest_version": "2.0",
+  "type": "delta",
+  "base_version": "test-8564da2-1786932080",
+  "target_version": "test-8564da2-1786933237",
+  "target_hash": "f8912eacd0c7f2fd948b4ae1edeacbb968e76c30a161782c0f1c97e7525f9431",
+  "delta_hash": "72e21f7496044dbe1b8dc4e5aad2668eb0287b10bfcbfde2a2966a8748e4914d",
+  "delta_algorithm": "detools",
+  "delta_size": 314,
+  "target_size": 860144,
+  "key_generation": 0,
+  "signature": "ba1a001cba7750e4c0d614a9afd5b45c8430101898bf8772558efdc9474cc8c1a36fae0a1896b03de9d80eb8662dbd05775119a71aae9275364772ed6ab82f00"
+}
