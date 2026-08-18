@@ -1,10 +1,11 @@
 {
   "manifest_version": "2.0",
   "type": "full",
+  "platform_type": "esp32",
   "base_version": null,
-  "target_version": "test-8564da2-1786933237",
+  "target_version": "test-v1",
   "target_hash": "f8912eacd0c7f2fd948b4ae1edeacbb968e76c30a161782c0f1c97e7525f9431",
   "target_size": 860144,
   "key_generation": 0,
-  "signature": "7b10963c7eb28f31bb08f11263aecb9bf347bdae524a0202e646b73fb4436f1803a4b5475a9e841a9a5917ac147b0a366a00071549dcd84d983f7cfb2bffbd0f"
+  "signature": "f39cd8ae22200bde7a987a01fdecadc8631a81c5d2eb15814cbeee0927df232b7f7a673002ceba3761569236eb0445dc7ef81b6f1ef302d0cd78cc51238f9409"
 }

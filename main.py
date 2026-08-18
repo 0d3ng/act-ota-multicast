@@ -37,7 +37,7 @@ base_version = None
 base_fw_url = None
 
 try:
-    resp = requests.get(f"{api_url}/firmware-releases/latest?type=full", headers=headers, timeout=30)
+    resp = requests.get(f"{api_url}/firmware-releases/latest?type=full&platform_type=esp32", headers=headers, timeout=30)
     if resp.status_code == 200:
         data = resp.json()
         print(f"Latest full release response: {data}")
@@ -81,6 +81,7 @@ print("--> Step 5: Building & signing FULL release manifest...")
 full_manifest_unsigned = {
     "manifest_version": "2.0",
     "type": "full",
+    "platform_type":"esp32",
     "base_version": None,
     "target_version": target_version,
     "target_hash": target_hash,
@@ -150,6 +151,7 @@ if base_version:
             delta_manifest_unsigned = {
                 "manifest_version": "2.0",
                 "type": "delta",
+                "platform_type": "esp32",
                 "base_version": base_version,
                 "target_version": target_version,
                 "target_hash": target_hash,
