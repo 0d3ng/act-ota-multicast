@@ -37,13 +37,14 @@ base_version = None
 base_fw_url = None
 
 try:
-    resp = requests.get(f"{api_url}/firmware-releases/latest?type=full&platform_type=esp32", headers=headers, timeout=30)
+    resp = requests.get(f"{api_url}/firmware-releases/latest?type=full&platform_type=esp32", headers=headers,
+                        timeout=30)
     if resp.status_code == 200:
         data = resp.json()
         print(f"Latest full release response: {data}")
         if isinstance(data, dict):
             base_version = data.get("target_version") or data.get("version") or data.get("base_version")
-            base_fw_url = f'{api_url}/firmware-releases/download/'+data.get("download_url")
+            base_fw_url = f'{api_url}/firmware-releases/download/' + data.get("download_url")
     else:
         print(f"⚠️ Notice: No previous full release found or endpoint returned HTTP {resp.status_code}")
 except Exception as e:
@@ -81,7 +82,7 @@ print("--> Step 5: Building & signing FULL release manifest...")
 full_manifest_unsigned = {
     "manifest_version": "2.0",
     "type": "full",
-    "platform_type":"esp32",
+    "platform_type": "esp32",
     "base_version": None,
     "target_version": target_version,
     "target_hash": target_hash,
@@ -190,3 +191,34 @@ if base_version:
             print(f"⚠️ Failed to download base firmware (HTTP {base_resp.status_code}). Skipping DELTA release.")
 else:
     print("--> Step 6: BASE_VERSION is null (first release). Skipping DELTA release.")
+
+# -------------------------------------------------------------
+# STEP 7: Broadcast Firmware Release
+# -------------------------------------------------------------
+platform_type = "esp32"
+print(f"Broadcasting firmware release for version: {target_version} (platform: {platform_type})...")
+
+try:
+    resp = requests.post(
+        f"{api_url}/firmware-releases/{target_version}/broadcast",
+        params={"platform_type": platform_type},
+        headers=headers,
+        timeout=30
+    )
+except Exception as e:
+    print(f"❌ FATAL: Request failed: {e}")
+    sys.exit(1)
+
+print(f"HTTP Status: {resp.status_code}")
+print("Response Body:")
+try:
+    body = resp.json()
+    print(json.dumps(body, indent=2))
+except ValueError:
+    print(resp.text)
+
+if 200 <= resp.status_code < 300:
+    print("✅ Firmware release broadcasted successfully!")
+else:
+    print(f"❌ Failed to broadcast firmware release (HTTP {resp.status_code})")
+    sys.exit(1)
