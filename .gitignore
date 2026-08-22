@@ -14,3 +14,5 @@ firmware/
 !firmware/.gitkeep
 venv
 build
+manifest_delta.json
+manifest_full.json
